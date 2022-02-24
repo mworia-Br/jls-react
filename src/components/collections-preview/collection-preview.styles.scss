@@ -1,0 +1,88 @@
+@import "../../scss/variables.styles.scss";
+@import "../../scss/mixins.scss";
+
+.section__browse-collections {
+  width: 100vw;
+  max-height: 100vh;
+  background-color: $color-bg;
+  @include respond(tab-land) {
+  }
+
+  .title {
+    text-align: center;
+    color: $color-black;
+  }
+  .preview {
+    width: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30vw;
+    &__text {
+      display: flex;
+      width: 20%;
+      height: 100%;
+      flex-direction: column;
+      padding-top: 3vw;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+
+    &__left,
+    &__right {
+      width: 40%;
+      height: initial;
+      position: relative;
+      @include respond(phone) {
+        display: none;
+      }
+
+      & > * {
+        position: absolute;
+      }
+
+      .img__large {
+        width: 45%;
+        height: auto;
+      }
+
+      .img__small {
+        width: 35%;
+        height: auto;
+      }
+    }
+  }
+
+  .collection-title {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    color: $color-secondary;
+
+    &:not(:last-child) {
+      margin-bottom: 0.4vw;
+    }
+    @include respond(desktop) {
+      &:hover {
+        font-style: italic;
+      }
+    }
+  }
+
+  .btn__text {
+    margin-top: 2.2vw;
+    text-align: center;
+    color: $color-secondary;
+    letter-spacing: 0.1em;
+    transition: letter-spacing 0.3s ease;
+
+    &:hover {
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .mouseentered {
+    opacity: 0;
+  }
+}
